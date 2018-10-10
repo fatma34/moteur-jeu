@@ -51,7 +51,7 @@
 #include <QApplication>
 #include <QLabel>
 #include <QSurfaceFormat>
-
+#include <QKeyEvent>
 #ifndef QT_NO_OPENGL
 #include "mainwidget.h"
 #endif
@@ -67,11 +67,36 @@ int main(int argc, char *argv[])
     app.setApplicationName("cube");
     app.setApplicationVersion("0.1");
 #ifndef QT_NO_OPENGL
-    MainWidget widget(5);
+    // MainWidget widget;
+    MainWidget widget1(1);
+    widget1.show();
+    QKeyEvent *event;
 
-  // MainWidget widget1;
-    widget.show();
-   //widget1.show();
+
+    MainWidget widget2(10);
+    widget2.show();
+
+    MainWidget widget3(100);
+    widget3.show();
+
+    MainWidget widget4(50000);
+    widget4.show();
+    if((event->key())==Qt::Key_Up)
+    {
+       widget1.angularSpeed++;
+       widget2.angularSpeed++;
+       widget3.angularSpeed++;
+       widget4.angularSpeed++;
+    }
+
+    if((event->key())==Qt::Key_Down)
+    {
+       widget1.angularSpeed--;
+       widget2.angularSpeed--;
+       widget3.angularSpeed--;
+       widget4.angularSpeed--;
+    }
+
 #else
     QLabel note("OpenGL Support required");
     note.show();
