@@ -95,6 +95,7 @@ void MainWidget::keyPressEvent(QKeyEvent *event)
             X--;
             break;
 
+
         case Qt::Key_Right:
             X++;
             break;
@@ -145,7 +146,7 @@ void MainWidget::timerEvent(QTimerEvent *)
     // Stop rotation when speed goes below threshold
 
         // Update rotation
-     // rotation = QQuaternion::fromAxisAndAngle(0.0,1.0,1.0, angularSpeed) * rotation;
+    rotation = QQuaternion::fromAxisAndAngle(0.0,1.0,0.0, angularSpeed) * rotation;
 
         // Request an update
         update();
@@ -174,7 +175,7 @@ void MainWidget::initializeGL()
     geometries = new GeometryEngine;
 
     // Use QBasicTimer because its faster than QTimer
-    timer.start(secondFrame, this);
+    timer.start(frameSeconde , this);
 }
 
 //! [3]
@@ -228,7 +229,7 @@ void MainWidget::resizeGL(int w, int h)
 
     // Reset projection
     projection.setToIdentity();
-    rotation = QQuaternion::fromAxisAndAngle(1.0,0.0,0.0, -45.0);
+   // rotation = QQuaternion::fromAxisAndAngle(1.0,0.0,0.0, -45.0);
 
     // Set perspective projection
     projection.perspective(fov, aspect, zNear, zFar);
