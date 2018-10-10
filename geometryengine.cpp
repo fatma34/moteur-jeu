@@ -86,7 +86,7 @@ GeometryEngine::~GeometryEngine()
 void GeometryEngine::initPlaneGeometry()
 {VertexData *vertices=new VertexData [16*16];
     int index =0;
-for (float i=0; i<16; i=i+(1/16))
+for (float i=0; i<1; i=i+(1/16))
      for (float j=0; j<16; j=j+(1/16))
        { VertexData v;
         v.position.setX(i);
