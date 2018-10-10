@@ -53,6 +53,7 @@
 #include <QVector2D>
 #include <QVector3D>
 #include <math.h>
+#include <QOpenGLTexture>
 struct VertexData
 {
     QVector3D position;
@@ -118,6 +119,7 @@ for (float i=0; i<16; i=i+(1/16))
 }
 void GeometryEngine::initCubeGeometry()
 {
+    QImage heightmap= QImage(":/heightmap.png");
     // For cube we would need only 8 vertices but we have to
     // duplicate vertex for each face because texture coordinate
     // is different.

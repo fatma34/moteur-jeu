@@ -106,6 +106,7 @@ private:
     QVector3D rotationAxis;
     qreal angularSpeed;
     QQuaternion rotation;
+    double frameSeconde;
 
 
 };

@@ -145,7 +145,7 @@ void MainWidget::timerEvent(QTimerEvent *)
     // Stop rotation when speed goes below threshold
 
         // Update rotation
-     // rotation = QQuaternion::fromAxisAndAngle(0.0,1.0,1.0, angularSpeed) * rotation;
+      rotation = QQuaternion::fromAxisAndAngle(0.0,1.0,1.0, angularSpeed) * rotation;
 
         // Request an update
         update();
