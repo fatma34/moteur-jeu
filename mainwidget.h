@@ -74,8 +74,8 @@ public:
      float X;
      float Y;
      float Z=-5.0;
-
-
+     qreal angularSpeed;
+     QVector3D rotationAxis;
 
 
 protected:
@@ -103,9 +103,10 @@ private:
     QMatrix4x4 projection;
 
     QVector2D mousePressPosition;
-    QVector3D rotationAxis;
-    qreal angularSpeed;
-    QQuaternion rotation;
+    //QVector3D rotationAxis;
+    //qreal angularSpeed;
+   QQuaternion rotation;
+    double frameSeconde;
 
 
 };
